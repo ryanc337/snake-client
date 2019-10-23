@@ -16,9 +16,9 @@ const connect = function() {
     conn.write("Name: RC7");
   });
 
-  conn.on('connect', () => {
-    conn.write() 
-  });
+  // conn.on('connect', () => {
+  //   conn.write();
+  // });
   
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
