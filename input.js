@@ -5,6 +5,7 @@ function setupInput (conn) {
   const stdin = process.stdin;
   stdin.on('data', handleUserInput);
   stdin.on('data', handUserKeys);
+  stdin.on('data', sendMessage);
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
@@ -31,6 +32,15 @@ function handUserKeys(key) {
     connection.write("Move: down");
   }
 };
+
+function sendMessage(key) {
+  if (key === 'b') {
+    connection.write('Say: Gang');
+  }
+  if (key === 'n') {
+    connection.write('Say: Whatdup');
+  }
+}
 
 module.exports = { connection }
 module.exports = { setupInput }
