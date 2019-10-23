@@ -14,7 +14,12 @@ const connect = function() {
   });
   conn.on('connect', () => {
     conn.write("Name: RC7");
-  })
+  });
+
+  conn.on('connect', () => {
+    conn.write() 
+  });
+  
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
   conn.on('data', (data) => {
